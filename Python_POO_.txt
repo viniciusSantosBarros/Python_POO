@@ -1,0 +1,66 @@
+class Carro:
+    def __init__(self, modelo, cor, ano, renavam, velocidade):
+        self.modelo = modelo
+        self.cor = cor
+        self.ano = ano
+        self.renavam = renavam
+        self.velocidade = velocidade
+
+    def get_modelo(self):
+        return self.modelo
+
+    def set_modelo(self, modelo):
+        self.modelo = modelo
+
+    def get_cor(self):
+        return self.cor
+
+    def set_cor(self, cor):
+        self.cor = cor
+
+    def get_ano(self):
+        return self.ano
+
+    def set_ano(self, ano):
+        self.ano = ano
+
+    def get_renavam(self):
+        return self.renavam
+
+    def set_renavam(self, renavam):
+        self.renavam = renavam
+
+    def get_velocidade(self):
+        return self.velocidade
+
+    def set_velocidade(self, velocidade):
+        self.velocidade = velocidade
+
+    def dados_automovel(self):
+        print(f'Modelo: {self.get_modelo()}')
+        print(f'Cor: {self.get_cor()}')
+        print(f'Ano: {self.get_ano()}')
+        print(f'Renavam: {self.get_renavam()}')
+        print()
+
+    def acelerar(self):
+        self.set_velocidade(self.get_velocidade()+40)
+        print(f'o automovel {self.get_modelo()} acelerou, registrando a nova velocidade de: {self.get_velocidade()} Km/hora')
+
+    def frear(self):
+        self.set_velocidade(self.get_velocidade()-25)
+        print(f'o automovel {self.get_modelo()} freou, registrando a nova velocidade de: {self.get_velocidade()} Km/hora')
+
+    def radar(self):
+        if self.get_velocidade() > 70:
+            print(f'o automovel {self.get_modelo()} está dirigindo acima da velocidade permitida, Multado!')
+
+        if self.get_velocidade() <=69:
+            print(f'o automovel {self.get_modelo()} está diringo sob velocidade permitidia, Dirija sempre com segurança!')
+
+c1 = Carro('escort', 'verde', 1990, 89963843286, 60)
+
+c1.dados_automovel()
+c1.frear()
+c1.acelerar()
+c1.radar()
